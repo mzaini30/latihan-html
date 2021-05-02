@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Latihan HTML</title>
+	<script src="/alpine.min.js" defer></script>
+	<style>
+		* {
+			font-family: Comic Sans MS;
+		}
+		body {
+			margin: 0;
+		}
+		.container {
+			padding: 20px 0;
+			width: 80%;
+			margin: auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="" x-data='beranda()'>
+		<div class="container">
+			<h1>Kumpulan Latihan</h1>
+			<hr>
+			<ol>
+				<template x-for='x in link'>
+					<li><a :href="'/' + x.file + '.html'"><span x-text='x.nama'></span></a></li>
+				</template>
+			</ol>
+		</div>
+	</div>
+	<script>
+		function beranda(){
+			return {
+				link: [
+					{
+						file: 'blogspedia',
+						nama: 'Blogspedia'
+					}
+				]
+			}
+		}
+	</script>
+</body>
+</html>
